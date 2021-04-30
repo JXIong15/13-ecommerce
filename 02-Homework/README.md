@@ -54,9 +54,9 @@ You’ll need to use the [MySQL2](https://www.npmjs.com/package/mysql2) and [Seq
 
 Use the `schema.sql` file in the `db` folder to create your database with MySQL shell commands. Use environment variables to store sensitive data like your MySQL username, password, and database name. -->
 
-### Database Models
+<!-- ### Database Models
 
-Your database should contain the following four models, including the requirements listed for each model:
+Your database should contain the following four models, including the requirements listed for each model: -->
 
 <!-- * `Category`
 
@@ -76,7 +76,7 @@ Your database should contain the following four models, including the requiremen
   
     * Doesn't allow null values. -->
 
-* `Product`
+<!-- * `Product` -->
 
   <!-- * `id`
   
@@ -134,7 +134,7 @@ Your database should contain the following four models, including the requiremen
   
     * String. -->
 
-* `ProductTag`
+<!-- * `ProductTag` -->
 
   <!-- * `id`
 
@@ -146,7 +146,7 @@ Your database should contain the following four models, including the requiremen
 
     * Uses auto increment. -->
 
-  * `product_id`
+  <!-- * `product_id`
 
     * Integer.
 
@@ -156,7 +156,7 @@ Your database should contain the following four models, including the requiremen
 
     * Integer.
 
-    * References the `Tag` model's `id`.
+    * References the `Tag` model's `id`. -->
 
 ### Associations
 
