@@ -20,8 +20,8 @@ SO THAT my company can compete with other e-commerce companies
 
 ```md
 GIVEN a functional Express.js API
-WHEN I add my database name, MySQL username, and MySQL password to an environment variable file
-THEN I am able to connect to a database using Sequelize
+<!-- WHEN I add my database name, MySQL username, and MySQL password to an environment variable file
+THEN I am able to connect to a database using Sequelize -->
 WHEN I enter schema and seed commands
 THEN a development database is created and is seeded with test data
 WHEN I enter the command to invoke the application
@@ -48,17 +48,17 @@ The following animation shows the application's POST, PUT, and DELETE routes for
 
 Your walkthrough video should also show the POST, PUT, and DELETE routes for products and tags being tested in Insomnia Core.
 
-## Getting Started
+<!-- ## Getting Started
 
 You’ll need to use the [MySQL2](https://www.npmjs.com/package/mysql2) and [Sequelize](https://www.npmjs.com/package/sequelize) packages to connect your Express.js API to a MySQL database and the [dotenv](https://www.npmjs.com/package/dotenv) package to use environment variables to store sensitive data.
 
-Use the `schema.sql` file in the `db` folder to create your database with MySQL shell commands. Use environment variables to store sensitive data like your MySQL username, password, and database name.
+Use the `schema.sql` file in the `db` folder to create your database with MySQL shell commands. Use environment variables to store sensitive data like your MySQL username, password, and database name. -->
 
 ### Database Models
 
 Your database should contain the following four models, including the requirements listed for each model:
 
-* `Category`
+<!-- * `Category`
 
   * `id`
 
@@ -74,11 +74,11 @@ Your database should contain the following four models, including the requiremen
   
     * String.
   
-    * Doesn't allow null values.
+    * Doesn't allow null values. -->
 
 * `Product`
 
-  * `id`
+  <!-- * `id`
   
     * Integer.
   
@@ -100,9 +100,9 @@ Your database should contain the following four models, including the requiremen
   
     * Doesn't allow null values.
   
-    * Validates that the value is a decimal.
+    * Validates that the value is a decimal. -->
 
-  * `stock`
+  <!-- * `stock`
   
     * Integer.
   
@@ -110,15 +110,15 @@ Your database should contain the following four models, including the requiremen
   
     * Set a default value of `10`.
   
-    * Validates that the value is numeric.
+    * Validates that the value is numeric. -->
 
-  * `category_id`
+  <!-- * `category_id`
   
     * Integer.
   
-    * References the `Category` model's `id`.
+    * References the `Category` model's `id`. -->
 
-* `Tag`
+<!-- * `Tag`
 
   * `id`
   
@@ -132,11 +132,11 @@ Your database should contain the following four models, including the requiremen
 
   * `tag_name`
   
-    * String.
+    * String. -->
 
 * `ProductTag`
 
-  * `id`
+  <!-- * `id`
 
     * Integer.
 
@@ -144,7 +144,7 @@ Your database should contain the following four models, including the requiremen
 
     * Set as primary key.
 
-    * Uses auto increment.
+    * Uses auto increment. -->
 
   * `product_id`
 
