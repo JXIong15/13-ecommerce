@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-  Tag.findOne(req.params.id, {
+  Tag.findByPk(req.params.id, {
     include: [Product],
   })
   .then((tags) => {
