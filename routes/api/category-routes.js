@@ -13,9 +13,15 @@ router.get('/', (req, res) => {
 
 router.get('/:id', (req, res) => {
   Category.findByPk(req.params.id, {
-      include: [Product ],
+      include: [Product],
   })
-  .then((categories) => res.json(categories))
+  .then((categories) => {
+    if (!req.params.id) {
+      res.status(404).json({ message: 'No category found with that id!' });
+      return;
+    }
+    res.json(categories)
+  })
   .catch ((err) => res.status(500).json(err))
 });
 
@@ -31,7 +37,13 @@ router.put('/:id', (req, res) => {
         id: req.params.id,
       },
     })
-    .then ((categories) => res.status(200).json(categories))
+    .then((categories) => {
+      if (!req.params.id) {
+        res.status(404).json({ message: 'No category found with that id!' });
+        return;
+      }
+      res.json(categories)
+    })
     .catch ((err) => res.status(400).json(err))
 });
 
@@ -41,7 +53,13 @@ router.delete('/:id', (req, res) => {
         id: req.params.id,
       },
     })
-    .then ((categories) => res.status(200).json(categories))
+    .then((categories) => {
+      if (!req.params.id) {
+        res.status(404).json({ message: 'No category found with that id!' });
+        return;
+      }
+      res.json(categories)
+    })
     .catch ((err) => res.status(400).json(err))
 });
 
