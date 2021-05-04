@@ -1,95 +1,96 @@
 # 13 Object-Relational Mapping (ORM): E-Commerce Back End
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## Your Task
 
-Internet retail, also known as **e-commerce**, is the largest sector of the electronics industry, generating an estimated $29 trillion in 2019. E-commerce platforms like Shopify and WooCommerce provide a suite of services to businesses of all sizes. Due to their prevalence, understanding the fundamental architecture of these platforms will benefit you as a full-stack web developer.
+## Table of Contents
+* [Introduction](#introduction)
+* [Functionality](#functionality)
+* [Tasks Completed](#tasks-completed)
+* [Technologies Used](#technologies-used)
+* [Installations](#installations)
+* [Demos](#demos)
+* [Known Issue](#known-issue)
+* [Sources](#sources)
+* [License](#license)
 
-Your task is to build the back end for an e-commerce site by modifying starter code. You’ll configure a working Express.js API to use Sequelize to interact with a MySQL database.
 
-Because this application won’t be deployed, you’ll also need to provide a link to a walkthrough video that demonstrates its functionality and all of the acceptance criteria being met. You’ll need to submit a link to the video and add it to the readme of your project.
+ ## Introduction
+ Uses Node, MySql, Insomnia, and the command line to sync the backend server to the MySql data. Routes the database appropriately.
+ * GitHub Repository: https://github.com/JXIong15/13-ecommerce
+ * [App Demonstration:](https://drive.google.com/file/d/1o0SrNRsSqu0UHwKE7BNGJvuu6fhUxWi0/view)
+<p align="center"><img src="./assets/mysql-products.png" width="70%" stylealt="the mysql table with the seeded information for products"/></p>
 
-## User Story
+
+## Functionality
+* When the program is initiated, the database and tables are created, and the seeds are put in. This is all displayed on the MySql Workbench.
+* In Insomnia, the user can test the routes for each table by using API PUT, POST, and DELETE.
+* To run the database and seeds:
+```
+mysql -h HOSTNAME -u USER DATABASE < ./db/schema.sql
+Quit
+npm run seeds
 ```
 
-## Acceptance Criteria
 
-WHEN I enter the command to invoke the application
-THEN my server is started and the Sequelize models are synced to the MySQL database
-WHEN I open API GET routes in Insomnia Core for categories, products, or tags
-THEN the data for each of these routes is displayed in a formatted JSON
-WHEN I test API POST, PUT, and DELETE routes in Insomnia Core
-THEN I am able to successfully create, update, and delete data in my database
-```
-
-## Mock-Up
-
-Your walkthrough video should also show the POST, PUT, and DELETE routes for products and tags being tested in Insomnia Core.
+## Tasks Completed
+* Dowloaded necessary NPM packages. View [Installations](#installations) below for exact packages.
+* Created a connection between the database and server using MySql.
+* Created the models for Category, Product, Tag, and ProductTag.
+  * Referenced Category in Product
+  * Referenced Product and Tag in ProductTag
+* Created category, product, and tag routes.
+  * each route can GET all the data for that table, GET the element by id, create an element using POST, update and element using PUT, and DELETE an element.
 
 
-### Seed the Database
+## Installations
+* Download NPM and packages:
+  * Inquirer (`npm install inquirer`)
+  * Node (`npm install node`)
+  * Dotenv (`npm install dotenv`)
+  * Express (`npm install express`)
+  * MySql (`npm install mysql`)
+  * MySql2 (`npm install mysql2`)
+  * Sequelize (`npm install sequelize`)
 
-After creating the models and routes, run `npm run seed` to seed data to your database so that you can test your routes.
+
+## Technologies Used
+* JavaScript
+* NPM Packages
+* Terminal/Command Line
+* MySql Workbench
+  * Query Conenection
+* MySql Server
+* Insomnia to test routes
 
 
-## Grading Requirements
+## Demos
+Whole App Demo: https://drive.google.com/file/d/1o0SrNRsSqu0UHwKE7BNGJvuu6fhUxWi0/view
 
-This homework is graded based on the following criteria: 
+* GET Demo:
+   <p align="center"><img src="./assets/get-demo.gif" stylealt="get demo"/></p>
 
-### Deliverables: 10%
+* POST Demo:
+   <p align="center"><img src="./assets/post-demo.gif" stylealt="post demo"/></p>
 
-* The GitHub repository containing your application code.
+* UPDATE Demo:
+   <p align="center"><img src="./assets/put-demo.gif" stylealt="put demo"/></p>
 
-### Walkthrough Video: 37%
+* DELETE Demo:
+   <p align="center"><img src="./assets/delete-demo.gif" stylealt="deleting demo"/></p>
 
-* A walkthrough video that demonstrates the functionality of the e-commerce back end must be submitted, and a link to the video should be included in your readme file.
 
-* The walkthrough video must show all of the technical acceptance criteria being met.
+## Known Issue
+* The `mysql -h root -u ecommerce_db < ./db/schema.sql` on the command line does not work. I'm not sure what package this is, or how to use the MySql shell.
 
-* The walkthrough video must demonstrate how to create the schema from the MySQL shell.
 
-* The walkthrough video must demonstrate how to seed the database from the command line.
+## Sources
+* NPM Packages: https://www.npmjs.com/
+* MySql Workbench: https://www.mysql.com/products/workbench/
+* MySql Server: https://dev.mysql.com/downloads/mysql/
+* Insomnia: https://insomnia.rest/download
 
-* The walkthrough video must demonstrate how to start the application’s server.
 
-* The walkthrough video must demonstrate GET routes for all categories, all products, and all tags being tested in Insomnia Core.
+## License
+Licensed under the [MIT License](LICENSE).
 
-* The walkthrough video must demonstrate GET routes for a single category, a single product, and a single tag being tested in Insomnia Core.
-
-* The walkthrough video must demonstrate POST, PUT, and DELETE routes for categories, products, and tags being tested in Insomnia Core.
-
-### Technical Acceptance Criteria: 40%
-
-* Satisfies all of the preceding acceptance criteria plus the following:
-
-  * Connects to a MySQL database using the [MySQL2](https://www.npmjs.com/package/mysql) and [Sequelize](https://www.npmjs.com/package/sequelize) packages.
-
-  * Stores sensitive data, like a user’s MySQL username, password, and database name, using environment variables through the [dotenv](https://www.npmjs.com/package/dotenv) package.
-
-  * Syncs Sequelize models to a MySQL database on the server start.
-
-  * Includes column definitions for all four models outlined in the homework instructions.
-
-  * Includes model associations outlined in the homework instructions.
-
-### Repository Quality: 13%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains quality readme with description and a link to a walkthrough video.
-
-## Review
-
-You are required to submit BOTH of the following for review:
-
-* A walkthrough video demonstrating the functionality of the application and all of the acceptance criteria being met.
-
-* The URL of the GitHub repository. Give the repository a unique name and include a readme describing the project.
-
----
-© 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
+<p align="center">© 2021 Jou Xiong, Trilogy, Northwestern Coding Bootcamp</p>
